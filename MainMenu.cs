@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
@@ -23,7 +22,8 @@ public class MainMenu : MonoBehaviour
             SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
             if (sceneLoader != null)
             {
-                sceneLoader.LoadScene();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else
             {
